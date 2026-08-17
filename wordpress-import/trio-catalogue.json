@@ -1,0 +1,33 @@
+{
+  "series": [
+    {
+      "id": "fruits-of-the-spirit",
+      "name": "The Fruits of the Spirit Series",
+      "slug": "fruits-of-the-spirit",
+      "scripture": "Galatians 5:22–23",
+      "description": "The Fruits of the Spirit Series is a collection of nine beautifully illustrated Christian picture books that help children explore the character qualities found in Galatians 5:22–23. Through engaging stories and relatable adventures, Jake, Liz and James learn what it means to live with love, joy, peace, patience, kindness, goodness, faithfulness, gentleness and self-control.",
+      "image": "image8.png"
+    },
+    {
+      "id": "armour-of-god",
+      "name": "The Armour of God Series",
+      "slug": "armour-of-god",
+      "scripture": "Ephesians 6:10–18",
+      "description": "The Armour of God Series is a collection of beautifully illustrated Christian picture books that help children discover the spiritual armour described in Ephesians 6:10–18. Through engaging stories and relatable adventures, Jake, Liz and James learn how to put on the belt of truth, breastplate of righteousness, shoes of peace, shield of faith, helmet of salvation and sword of the Spirit, equipping them to stand strong in God’s love every day.",
+      "image": "image19.png",
+      "comingSoon": true
+    }
+  ],
+  "products": [
+    {"id":"day-love-won","sku":"TT-BOOK-DLW","title":"The Day Love Won","price":149,"series":"fruits-of-the-spirit","virtue":"Love","image":"image13.png","description":"An exciting outing to the animal farm turns sour when James is hurt by one of his friends. He remembers that Jesus commands us to love others and tries to solve the problem the right way."},
+    {"id":"joy-bubbles-over","sku":"TT-BOOK-JBO","title":"The Joy That Bubbles Over","price":149,"series":"fruits-of-the-spirit","virtue":"Joy","image":"image11.png","description":"Jake, Liz and James begin to panic when a windy beach day threatens to ruin their plans. But they soon learn that true joy isn’t about perfect weather. It’s about spending time together and finding happiness in every moment."},
+    {"id":"calm-in-the-storm","sku":"TT-BOOK-CITS","title":"Calm in the Storm","price":149,"series":"fruits-of-the-spirit","virtue":"Peace","image":"image12.png","description":"When Jake starts a new school, his nerves begin to take over. With the help of his family, he soon remembers that God’s peace can help him through anything."},
+    {"id":"waiting-game","sku":"TT-BOOK-TWG","title":"The Waiting Game","price":149,"series":"fruits-of-the-spirit","virtue":"Patience","image":"image14.png","description":"As the day of James’ birthday party draws nearer, the weather prediction puts a real dampener on things. James’ Mum takes the chance to help him remember that even when we are waiting, God is working."},
+    {"id":"kindness-changes-everything","sku":"TT-BOOK-KCE","title":"Kindness Changes Everything","price":149,"series":"fruits-of-the-spirit","virtue":"Kindness","image":"image15.png","description":"When Liz feels sick one day, she forgets to be kind. Her brothers, Jake and James, remind her of the power of love, forgiveness, and the Golden Rule."},
+    {"id":"choosing-what-is-right","sku":"TT-BOOK-CWIR","title":"Choosing What Is Right","price":149,"series":"fruits-of-the-spirit","virtue":"Goodness","image":"image16.png","description":"When Jake faces the biggest rugby game of the season, one honest decision could cost his team the championship. Will he choose winning… or will he choose what is right?"},
+    {"id":"keeping-my-promise","sku":"TT-BOOK-KMP","title":"Keeping My Promise","price":149,"series":"fruits-of-the-spirit","virtue":"Faithfulness","image":"image17.png","description":"Adventure coming soon!","comingSoon":true},
+    {"id":"soft-words-strong-hearts","sku":"TT-BOOK-SWSH","title":"Soft Words, Strong Hearts","price":149,"series":"fruits-of-the-spirit","virtue":"Gentleness","image":"image17.png","description":"Adventure coming soon!","comingSoon":true},
+    {"id":"power-to-pause","sku":"TT-BOOK-PTP","title":"The Power to Pause","price":149,"series":"fruits-of-the-spirit","virtue":"Self-control","image":"image17.png","description":"Adventure coming soon!","comingSoon":true},
+    {"id":"complete-series-bundle","sku":"TT-BUNDLE-FOS","title":"Complete Series Bundle","price":1275,"regularPrice":1341,"series":"fruits-of-the-spirit","virtue":"All 9 books","image":"image18.png","badge":"Save 5%","description":"Buy all 9 books in The Fruits of the Spirit series and get 5% off. Perfect for gift-giving or building your home library.","bundle":true}
+  ]
+}
