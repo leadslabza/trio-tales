@@ -79,11 +79,14 @@ async function bootstrapStorefront(){
 
   document.body.innerHTML='<main id="main"><section class="section"><div class="container empty"><h1>Loading Trio Tales…</h1><p>Connecting to the shop.</p></div></section></main>';
   try{
-    const [{products},{series},cartResult]=await Promise.all([
+    const cataloguePromise=Promise.all([
       TrioAPI.products({perPage:100}),
-      TrioAPI.series(),
-      store('cart')
+      TrioAPI.series()
     ]);
+    // Begin restoring the WooCommerce cart at the same time as the catalogue,
+    // but do not make browsing the shop depend on that dynamic request.
+    const cartPromise=store('cart');
+    const [{products},{series}]=await cataloguePromise;
     const fallbackSeries=window.TRIO_DATA.series||[];
     const liveSeries=Array.isArray(series)?series:[];
     DATA={
@@ -94,7 +97,14 @@ async function bootstrapStorefront(){
         return fallback&&!s.image?{...s,image:fallback.image}:s;
       })
     };
-    syncStoreCart(cartResult);
+    if(page==='cart'||page==='checkout'){
+      // These pages need a current WooCommerce cart before they render.
+      syncStoreCart(await cartPromise);
+    }else{
+      // The local cart remains the immediate UI source of truth. Sync its
+      // WooCommerce counterpart in the background for catalogue pages.
+      cartPromise.then(syncStoreCart).catch(error=>console.warn('Trio Tales cart sync error:',error));
+    }
     renderer();
     if(page==='checkout') enableWooCheckout();
   }catch(error){

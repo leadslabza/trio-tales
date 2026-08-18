@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { getProductBySlug, getProducts } from '../services/woocommerce.js';
 
 const router = Router();
+const catalogueCache = 'public, s-maxage=600, stale-while-revalidate=3600';
 
 function mapProduct(product) {
   const seriesCategory = product.categories?.[0];
@@ -38,6 +39,9 @@ router.get('/', async (req, res, next) => {
       perPage: Math.min(Number(req.query.perPage || 100), 100),
       category: req.query.category || ''
     });
+    // Product data changes infrequently. Let Vercel cache this response, while
+    // keeping cart and checkout endpoints entirely dynamic.
+    res.set('Cache-Control', catalogueCache);
     res.json({ products: products.map(mapProduct) });
   } catch (error) { next(error); }
 });
@@ -46,6 +50,7 @@ router.get('/:slug', async (req, res, next) => {
   try {
     const product = await getProductBySlug(req.params.slug);
     if (!product) return res.status(404).json({ error: 'Product not found' });
+    res.set('Cache-Control', catalogueCache);
     res.json({ product: mapProduct(product) });
   } catch (error) { next(error); }
 });
