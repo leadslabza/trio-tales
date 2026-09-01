@@ -1,8 +1,11 @@
 import crypto from 'node:crypto';
 
-const baseUrl = process.env.WC_BASE_URL?.replace(/\/$/, '');
-const consumerKey = process.env.WC_CONSUMER_KEY;
-const consumerSecret = process.env.WC_CONSUMER_SECRET;
+// Preview deployments can use an isolated WooCommerce store without changing
+// the credentials used by the production deployment.
+const usePreviewStore = process.env.VERCEL_ENV === 'preview';
+const baseUrl = (usePreviewStore ? process.env.PREVIEW_WC_BASE_URL : process.env.WC_BASE_URL)?.replace(/\/$/, '');
+const consumerKey = usePreviewStore ? process.env.PREVIEW_WC_CONSUMER_KEY : process.env.WC_CONSUMER_KEY;
+const consumerSecret = usePreviewStore ? process.env.PREVIEW_WC_CONSUMER_SECRET : process.env.WC_CONSUMER_SECRET;
 
 export function isConfigured() {
   return Boolean(baseUrl && consumerKey && consumerSecret);
