@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { getCategories } from '../services/woocommerce.js';
 
 const router = Router();
-const catalogueCache = 'public, s-maxage=600, stale-while-revalidate=3600';
+const catalogueCache = 'public, s-maxage=60, stale-while-revalidate=300';
 
 function mapSeries(category) {
   const scripture = category.meta_data?.find(x => x.key === 'trio_scripture')?.value || '';

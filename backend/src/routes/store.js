@@ -5,6 +5,7 @@ const router = Router();
 const allowed = new Set(['cart', 'cart/add-item', 'cart/update-item', 'cart/remove-item', 'cart/update-customer', 'cart/select-shipping-rate', 'checkout']);
 
 router.use(async (req, res, next) => {
+  res.set('Cache-Control', 'private, no-store, no-cache, must-revalidate');
   try {
     const path = req.path.replace(/^\//, '');
     if (!allowed.has(path)) return res.status(404).json({ error: 'Store endpoint not found' });

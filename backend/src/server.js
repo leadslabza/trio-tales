@@ -47,12 +47,26 @@ app.use('/api/store', store);
 
 // Serve only public frontend assets and named pages. The backend directory,
 // including its environment file, is never exposed by this static routing.
-app.use('/assets', express.static(path.join(frontendDir, 'assets')));
-app.get('/', (_req, res) => res.redirect(302, '/home'));
+app.use('/assets', express.static(path.join(frontendDir, 'assets'), {
+  setHeaders(res, filePath) {
+    if (/\.(?:png|jpe?g|gif|webp|svg|ico)$/i.test(filePath)) {
+      res.set('Cache-Control', 'public, max-age=31536000, immutable');
+    } else {
+      res.set('Cache-Control', 'public, max-age=0, must-revalidate');
+    }
+  }
+}));
+app.get('/', (_req, res) => {
+  res.set('Cache-Control', 'no-cache, must-revalidate');
+  res.redirect(302, '/home');
+});
 
 for (const [slug, file] of Object.entries(pages)) {
   app.get(`/${file}`, (req, res) => res.redirect(301, `/${slug}${req.url.slice(file.length + 1)}`));
-  app.get(`/${slug}`, (_req, res) => res.sendFile(path.join(frontendDir, file)));
+  app.get(`/${slug}`, (_req, res) => {
+    res.set('Cache-Control', 'no-cache, must-revalidate');
+    res.sendFile(path.join(frontendDir, file));
+  });
 }
 
 app.use((error, _req, res, _next) => {

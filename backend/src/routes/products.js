@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { getProductBySlug, getProducts } from '../services/woocommerce.js';
 
 const router = Router();
-const catalogueCache = 'no-store';
+const catalogueCache = 'public, s-maxage=60, stale-while-revalidate=300';
 
 function mapProduct(product) {
   const seriesCategory = product.categories?.[0];

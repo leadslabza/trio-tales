@@ -2,6 +2,11 @@ import { Router } from 'express';
 
 const router = Router();
 
+router.use((_req, res, next) => {
+  res.set('Cache-Control', 'private, no-store, no-cache, must-revalidate');
+  next();
+});
+
 // Phase A intentionally stops before payment/order creation. The endpoint exists
 // now so the frontend has a stable contract while WooCommerce/payment credentials
 // and the South African gateway are configured.
