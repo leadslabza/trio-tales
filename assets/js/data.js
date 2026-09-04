@@ -26,6 +26,14 @@ window.TRIO_DATA = {
       description: 'The Armour of God Series is a collection of beautifully illustrated Christian picture books that help children discover the spiritual armour described in Ephesians 6:10–18. Through engaging stories and relatable adventures, Jake, Liz and James learn how to put on the belt of truth, breastplate of righteousness, shoes of peace, shield of faith, helmet of salvation and sword of the Spirit, equipping them to stand strong in God’s love every day.',
       image: 'assets/images/image19.png',
       comingSoon: true
+    },
+    {
+      id: 'activity-books',
+      name: 'Fruits of the Spirit Colouring & Activity Book',
+      scripture: 'Activity Books',
+      description: 'Join Jake, Liz and James as they learn about God’s love and how to live it every day! This book is filled with beautiful colouring pages, engaging activities and simple Bible truths to help little hearts grow big faith.',
+      image: 'assets/images/activity-books.png',
+      buttonLabel: 'Shop Activity Books'
     }
   ],
   products: [
