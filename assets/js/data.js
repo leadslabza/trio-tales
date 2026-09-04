@@ -29,9 +29,9 @@ window.TRIO_DATA = {
     },
     {
       id: 'activity-books',
-      name: 'Fruits of the Spirit Colouring & Activity Book',
-      scripture: 'Activity Books',
-      description: 'Join Jake, Liz and James as they learn about God’s love and how to live it every day! This book is filled with beautiful colouring pages, engaging activities and simple Bible truths to help little hearts grow big faith.',
+      name: 'Activity Books',
+      scripture: 'Matthew 19:14',
+      description: 'Keep little hands busy and little hearts growing with our Trio Tales Activity Books!<br><br>Filled with fun, age-appropriate activities inspired by our faith-filled stories, these books are perfect for colouring, learning, creating and exploring important lessons together.<br><br>A lovely addition to story time, quiet afternoons or family moments, helping children grow in faith while having fun.<br><br><em>“Let the little children come to me...”</em>',
       image: 'assets/images/activity-books.png',
       buttonLabel: 'Shop Activity Books'
     }
