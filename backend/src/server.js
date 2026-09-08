@@ -9,6 +9,7 @@ import products from './routes/products.js';
 import series from './routes/series.js';
 import checkout from './routes/checkout.js';
 import store from './routes/store.js';
+import orders from './routes/orders.js';
 
 const app = express();
 const port = Number(process.env.PORT || 8787);
@@ -44,6 +45,7 @@ app.use('/api/products', products);
 app.use('/api/series', series);
 app.use('/api/checkout', checkout);
 app.use('/api/store', store);
+app.use('/api/orders', orders);
 
 // Serve only public frontend assets and named pages. The backend directory,
 // including its environment file, is never exposed by this static routing.
