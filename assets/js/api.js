@@ -21,7 +21,11 @@ window.TrioAPI = {
 
     const body = await response.json().catch(() => ({}));
     if (!response.ok) {
-      const error = new Error(body.error || `Request failed (${response.status})`);
+      const apiError = body.error;
+      const message = typeof apiError === 'string'
+        ? apiError
+        : apiError?.message || body.message || `Request failed (${response.status})`;
+      const error = new Error(message);
       error.status = response.status;
       error.details = body;
       throw error;

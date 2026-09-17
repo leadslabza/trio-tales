@@ -122,12 +122,23 @@ export async function wcRequest(path, options = {}) {
 }
 
 export async function storeRequest(path, options = {}) {
-  const url = new URL(`/wp-json/wc/store/v1/${path.replace(/^\//, '')}`, baseUrl);
-  const response = await fetch(url, {
+  const storePath = `/wc/store/v1/${path.replace(/^\//, '')}`;
+  const request = url => fetch(url, {
     method: options.method || 'GET',
     headers: { Accept: 'application/json', ...(options.headers || {}) },
     body: options.body ? JSON.stringify(options.body) : undefined
   });
+  let response = await request(new URL(`/wp-json${storePath}`, baseUrl));
+
+  // Some managed/cPanel WordPress hosts block selected POST requests under
+  // /wp-json even though the same registered REST endpoint works normally.
+  // WordPress's rest_route form reaches the same Store API controller without
+  // relying on the host's rewrite rules.
+  if (response.status === 404) {
+    const fallbackUrl = new URL('/', baseUrl);
+    fallbackUrl.searchParams.set('rest_route', storePath);
+    response = await request(fallbackUrl);
+  }
   const body = await response.json().catch(() => ({}));
   if (!response.ok) {
     const error = new Error(body.message || `Store request failed (${response.status})`);
