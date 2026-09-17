@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { storeRequest } from '../services/woocommerce.js';
 
 const router = Router();
-const allowed = new Set(['cart', 'cart/add-item', 'cart/update-item', 'cart/remove-item', 'cart/update-customer', 'cart/select-shipping-rate', 'checkout']);
+const allowed = new Set(['cart', 'cart/add-item', 'cart/update-item', 'cart/remove-item', 'cart/update-customer', 'cart/select-shipping-rate', 'cart/apply-coupon', 'cart/remove-coupon', 'checkout']);
 
 router.use(async (req, res, next) => {
   res.set('Cache-Control', 'private, no-store, no-cache, must-revalidate');

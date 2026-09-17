@@ -80,3 +80,7 @@
 @keyframes trio-float{0%,100%{transform:translate3d(0,0,0) rotate(-1deg)}50%{transform:translate3d(0,-8px,0) rotate(3deg)}}
 @media(max-width:620px){.decor-icon{opacity:.72;width:38px}.decor-large{width:64px}.decor-top-left,.decor-bottom-left{left:4px}.decor-top-right,.decor-bottom-right{right:4px}}
 @media(prefers-reduced-motion:reduce){.decor-icon{animation:none}}
+
+/* WooCommerce coupon controls */
+.coupon-box{border-top:1px solid var(--line);margin-top:8px;padding:18px 0 8px}.coupon-entry{display:flex;gap:8px;margin-top:8px}.coupon-entry input{min-width:0;width:100%;padding:11px 12px;border:1px solid #decbd3;border-radius:12px;background:#fff;text-transform:uppercase}.coupon-entry .btn{padding:10px 16px;white-space:nowrap}.applied-coupons{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.coupon-chip{display:inline-flex;align-items:center;gap:8px;background:var(--pink-soft);color:var(--pink-dark);border:1px solid #f2bfd1;border-radius:999px;padding:5px 8px 5px 12px;font-size:.86rem;font-weight:800}.coupon-chip button{display:grid;place-items:center;width:22px;height:22px;padding:0;border:0;border-radius:50%;background:var(--pink);color:#fff;font-weight:900}.coupon-message{min-height:1.35em;margin:8px 0 0;font-size:.86rem;color:var(--muted)}.coupon-message.success{color:#26734d}.coupon-message.error{color:#b3264d}
+@media(max-width:620px){.coupon-entry{align-items:stretch}.coupon-entry .btn{width:auto}}
