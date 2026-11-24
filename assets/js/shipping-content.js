@@ -8,7 +8,7 @@ window.TRIO_SHIPPING_HTML = `
 <p><strong>Cost: Free</strong></p>
 <p>Customers may select the collection option at checkout. Collection details and any necessary collection instructions will be provided after the order has been placed.</p>
 <h3>1.2 Courier delivery</h3>
-<p><strong>Flat rate: R100.00</strong></p>
+<p><strong>Flat rate: R150.00</strong></p>
 <p>Courier delivery is available at the flat rate displayed at checkout.</p>
 <p>The shipping cost is added to the product subtotal to calculate the total order amount.</p>
 <p>No additional shipping options are currently offered unless specifically displayed and made available by Trio Tales.</p>

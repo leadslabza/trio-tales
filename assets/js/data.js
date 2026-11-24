@@ -9,7 +9,7 @@ window.TRIO_DATA = {
   },
   shipping: [
     { id: 'collect', label: 'Collect in Kloof', price: 0, detail: 'Free collection in Kloof.' },
-    { id: 'courier', label: 'Courier', price: 100, detail: 'Flat-rate courier delivery within South Africa.' }
+    { id: 'courier', label: 'Courier', price: 150, detail: 'Flat-rate courier delivery within South Africa.' }
   ],
   series: [
     {

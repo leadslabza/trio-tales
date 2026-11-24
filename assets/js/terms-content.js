@@ -59,7 +59,7 @@ window.TRIO_TERMS_HTML = `
 <h2>Section 8 – Shipping, collection, returns and refunds</h2>
 <p>Shipping and collection arrangements are governed by the Trio Tales <a href="shipping.html">Shipping &amp; Returns Policy</a>.</p>
 <p>The available fulfilment options currently include:</p>
-<ul><li>Collect in Kloof — Free</li><li>Courier — R100.00 flat rate</li></ul>
+<ul><li>Collect in Kloof — Free</li><li>Courier — R150.00 flat rate</li></ul>
 <p>Returns, refunds, damaged products, incorrect orders, and related matters are handled in accordance with the applicable Trio Tales Shipping &amp; Returns Policy and applicable law.</p>
 
 <h2>Section 9 – Intellectual property</h2>
